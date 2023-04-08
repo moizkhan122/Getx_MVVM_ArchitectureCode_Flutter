@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/res/components/roundedButton.dart';
 import 'package:flutter_application_1/utills/utilss.dart';
-import 'package:flutter_application_1/view_model/Controller/LoginViewModel.dart';
+import 'package:flutter_application_1/view_model/Controller/login/LoginViewModel.dart';
 import 'package:get/get.dart';
 
 class LoginView extends StatelessWidget {
