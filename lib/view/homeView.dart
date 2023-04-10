@@ -31,7 +31,7 @@ class _HomeViewState extends State<HomeView> {
           case Status.LOADING:
             return const Center(child: CircularProgressIndicator());
           case Status.ERROR:
-            return  Center(child: Text("Some Thing Went Wrong",style: Theme.of(context).textTheme.displayMedium,));
+            return  Center(child: Text(userlistApi.errorr.toString(),style: Theme.of(context).textTheme.displayMedium,));
           case Status.COMPLETE:
             return ListView.builder(
               itemCount: userlistApi.userlist.value.data!.length,

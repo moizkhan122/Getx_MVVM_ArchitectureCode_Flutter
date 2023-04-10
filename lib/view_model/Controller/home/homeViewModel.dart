@@ -12,9 +12,11 @@ class HomeViewModel extends GetxController {
 
     final rxRequestStatus = Status.LOADING.obs;
     final userlist = UserListModel().obs;
+     RxString errorr = ''.obs;
 
     void setrxRequestStatus(Status _value) => rxRequestStatus.value = _value;
     void setuserlist(UserListModel _value) => userlist.value = _value;
+    void setError(String value) => errorr.value = value;
     
     void homeuserApi(){
       
@@ -22,6 +24,7 @@ class HomeViewModel extends GetxController {
         setrxRequestStatus(Status.COMPLETE);
         setuserlist(value);
       }).onError((error, stackTrace){
+        setError(error.toString());
         setrxRequestStatus(Status.ERROR);
       });
     }
